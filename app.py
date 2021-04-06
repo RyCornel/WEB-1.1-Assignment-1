@@ -16,6 +16,10 @@ def favorite_animal(users_animal):
 def favorite_dessert(users_dessert):
     return f"How did you know I liked {users_dessert}?"
 
+@app.route('/madlibs/<adjective>/<noun>')
+def madlibs(adjective, noun):
+    return f"I once had a {noun} that used to {adjective} a lot."
+
 
 if __name__ == '__main__':
     app.run(debug=True)
