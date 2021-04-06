@@ -22,17 +22,29 @@ def madlibs(adjective, noun):
 
 @app.route('/multiply/<num1>/<num2>')
 def multiply(num1, num2):
-  num1 = int(num1)
-  num2 = int(num2) 
-  answer = int(num1 * num2)
+  int_num1 = int(num1)
+  int_num2 = int(num2) 
+  answer = (int_num1 * int_num2)
 
-  if answer != int(num1 * num2):
-    return f"Invalid input. Please try again by entering two numbers!"  
-  else :
-    return f"{num1} times {num2} is {answer}!"
-
+  if num1.isdigit() & num2.isdigit():
+      return int_num1 & int_num2
     
+
+  if answer == True:
+    return f"{num1} times {num2} is {answer}!"  
+  else :
+    return f"Invalid input. Please try again by entering two numbers!"  
+
+
+@app.route('/sayntimes/<word>/<n>')
+def say_n_times(word, n):
+  
+  for i in word:
+    space_word = word + " "
+    return space_word * n 
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
