@@ -20,6 +20,18 @@ def favorite_dessert(users_dessert):
 def madlibs(adjective, noun):
     return f"I once had a {noun} that used to {adjective} a lot."
 
+@app.route('/multiply/<num1>/<num2>')
+def multiply(num1, num2):
+  num1 = int(num1)
+  num2 = int(num2) 
+  answer = int(num1 * num2)
+
+  if answer != int(num1 * num2):
+    return f"Invalid input. Please try again by entering two numbers!"  
+  else :
+    return f"{num1} times {num2} is {answer}!"
+
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
