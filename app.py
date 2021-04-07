@@ -23,26 +23,30 @@ def madlibs(adjective, noun):
 
 @app.route('/multiply/<num1>/<num2>')
 def multiply(num1, num2):
-  int_num1 = int(num1)
-  int_num2 = int(num2) 
-  answer = (int_num1 * int_num2)
+    str_num1 = str(num1)
+    str_num2 = str(num2)
 
-  if num1.isdigit() & num2.isdigit():
-      return int_num1 & int_num2
-    
-
-  if answer == True:
-    return f"{num1} times {num2} is {answer}!"  
-  else :
-    return f"Invalid input. Please try again by entering two numbers!"  
+    if str_num1.isdigit() & str_num2.isdigit():
+        answer = num1 * num2
+        print(f"{num1} times {num2} is {answer}!")
+        return answer
+    else:
+        wrongAnswer = f"Invalid input. Please try again by entering two numbers!"
+        print(wrongAnswer)
+        return wrongAnswer
 
 
 @app.route('/sayntimes/<word>/<n>')
 def say_n_times(word, n):
+  nStr = str(n)
   
-  for i in word:
-    space_word = word + " "
-    return space_word * n 
+  if nStr.isdigit():
+        for i in word:
+            space_word = word + " "
+        print(space_word * 5)
+        return space_word * n 
+
+   
 
 @app.route('/dicegame/')
 def dicegame():
@@ -53,6 +57,7 @@ def dicegame():
     else:
       print(f"You rolled {roll}. Sorry, you lost.")
     
+
 
 
 
