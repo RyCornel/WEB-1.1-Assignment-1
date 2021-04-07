@@ -27,7 +27,9 @@ def multiply(num1, num2):
     str_num2 = str(num2)
 
     if str_num1.isdigit() & str_num2.isdigit():
-        answer = num1 * num2
+        str_num1 = int(num1)
+        str_num2 = int(num2)
+        answer = str_num1 * str_num2
         print(f"{num1} times {num2} is {answer}!")
         return answer
     else:
@@ -41,10 +43,12 @@ def say_n_times(word, n):
   nStr = str(n)
   
   if nStr.isdigit():
-        for i in word:
-            space_word = word + " "
-        print(space_word * 5)
-        return space_word * n 
+      nStr = int(n)
+
+      for i in word:
+        space_word = word + " "
+      print(space_word * n)
+      return space_word * n 
 
    
 
