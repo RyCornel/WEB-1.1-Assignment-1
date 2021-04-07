@@ -40,13 +40,15 @@ def multiply(num1, num2):
 
 @app.route('/sayntimes/<word>/<n>')
 def say_n_times(word, n):
-  n = int(n)
-  
-  if n.isdigit():
-    for i in word:
-        space_word = word + " "
-    print(space_word * n)
-    return space_word * n 
+    n = str(n)
+
+    if n.isdigit():
+        n = int(n)
+        
+        for i in word:
+            space_word = word + " "
+        print(space_word * n)
+        return space_word * n 
 
    
 
